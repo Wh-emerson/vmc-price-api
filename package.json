@@ -1,0 +1,14 @@
+{
+  "name": "vmc-price-api",
+  "version": "1.0.0",
+  "description": "VMC 系列价格表查价 Node API（企业微信智能机器人回调）",
+  "main": "api/quote.js",
+  "scripts": {
+    "check": "node --check api/quote.js"
+  },
+  "dependencies": {
+    "wechat-crypto": "^0.0.2",
+    "wxcrypt": "^1.4.3",
+    "xlsx": "^0.18.5"
+  }
+}
