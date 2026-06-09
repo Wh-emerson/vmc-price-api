@@ -279,7 +279,6 @@ function findExact(list, key) {
 // apply_rule：VMC 系列报价调整规则
 function applyRule(model, base) {
   const s = normalizeModel(model);
-  const parts = s.split(".").filter(Boolean);
 
   if (s.startsWith("VMCX")) {
     const adjusted = round2(base * 1.4);
@@ -290,12 +289,12 @@ function applyRule(model, base) {
     };
   }
 
-  if (s.startsWith("VMPX") && parts[2] && parts[2].includes("50")) {
-    const adjusted = round2(base * 1.4);
+  if (s.startsWith("VMPX")) {
+    const adjusted = round2(base * 1.5 + 55);
     return {
-      rule: "VMPX_50_MULTIPLY_1.4",
+      rule: "VMPX_MULTIPLY_1.5_PLUS_55",
       adjusted,
-      formula: `${base.toFixed(2)} * 1.4 = ${adjusted.toFixed(2)}`
+      formula: `${base.toFixed(2)} * 1.5 + 55 = ${adjusted.toFixed(2)}`
     };
   }
 
