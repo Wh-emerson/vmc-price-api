@@ -3,7 +3,12 @@
   "builds": [
     {
       "src": "api/quote.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": [
+          "api/VMC系列价格表.xlsx"
+        ]
+      }
     }
   ],
   "routes": [
